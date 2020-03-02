@@ -57,7 +57,7 @@
             this.T_XMLFile.Name = "T_XMLFile";
             this.T_XMLFile.Size = new System.Drawing.Size(377, 20);
             this.T_XMLFile.TabIndex = 0;
-            this.T_XMLFile.Text = "C:\\Temp\\Jason\\Config\\loot.xml";
+            this.T_XMLFile.Text = "C:\\Program Files (x86)\\Steam\\steamapps\\common\\7 Days To Die\\Data\\Config\\loot.xml";
             // 
             // label1
             // 

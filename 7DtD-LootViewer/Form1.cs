@@ -136,7 +136,7 @@ namespace _7DtD_LootViewer
             Dictionary<int, string> tempDict = new Dictionary<int, string>();
             foreach(KeyValuePair<int, lootContainer> lc in tempcontainer)
             {
-                tempDict.Add(lc.Key, lc.Key + ":" + lc.Value.name);
+                tempDict.Add(lc.Key, "Container: " + lc.Key );
             }
             return tempDict;
         }
@@ -268,7 +268,7 @@ namespace _7DtD_LootViewer
         private void B_Load_Click(object sender, EventArgs e)
         {
             //Read Import file for all currently specified Container Names
-            _containerNames = lootContainernames.getNames();
+           // _containerNames = lootContainernames.getNames();
 
             XmlDocument doc = new XmlDocument();
             doc.Load(T_XMLFile.Text);
@@ -411,10 +411,13 @@ namespace _7DtD_LootViewer
                     //Loot Container, parse loot items out and figure Probabilities
                     //First parse all parts of the Loot Container itself
 
+                    
                     //Check to see if the Container has already been saved
                     int containerID = Int32.Parse(lg.ParentNode.Attributes["id"].Value);
                     if (!_lootContainer.ContainsKey(containerID))
                     {
+
+                        this.V_LContainer.Items.Add(" Loot Container: " + containerID);
                         //LootContainer doesn't exist, add it
                         M_Output.AppendText("This is a Loot Container: " + containerID + Environment.NewLine);
 
@@ -431,9 +434,12 @@ namespace _7DtD_LootViewer
                         tempContainer.size = lg.ParentNode.Attributes["size"].Value; ;
 
                         countParse tempValueLC = new countParse();
-                        string countLC = lg.ParentNode.Attributes["count"].Value;
+                        string countLC = "1";
 
-                        if (parseCount(countLC, tempValueLC))//Parse Count into its fields, if it fails, assume Count=1 by leaving it default.
+                        if ( lg.ParentNode.Attributes["count"] != null)
+                            countLC = lg.ParentNode.Attributes["count"].Value;
+
+                        if(parseCount(countLC, tempValueLC))//Parse Count into its fields, if it fails, assume Count=1 by leaving it default.
                         {
                             tempContainer.count = tempValueLC.count;
                             tempContainer.minCount = tempValueLC.minCount;
