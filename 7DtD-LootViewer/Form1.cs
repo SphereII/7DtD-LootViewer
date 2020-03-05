@@ -136,7 +136,8 @@ namespace _7DtD_LootViewer
             Dictionary<int, string> tempDict = new Dictionary<int, string>();
             foreach(KeyValuePair<int, lootContainer> lc in tempcontainer)
             {
-                tempDict.Add(lc.Key, "Container: " + lc.Key );
+                //tempDict.Add(lc.Key, "Container: " + lc.Key );
+                tempDict.Add(lc.Key, lc.Key + ": " + lc.Value.name);
             }
             return tempDict;
         }
@@ -267,8 +268,14 @@ namespace _7DtD_LootViewer
 
         private void B_Load_Click(object sender, EventArgs e)
         {
+            M_Output.Clear();
+            V_LContainer.DataSource = null;
+            _lootGroups.Clear();
+            _lootContainer.Clear();
+            _LootProbTmpl.Clear();
+
             //Read Import file for all currently specified Container Names
-           // _containerNames = lootContainernames.getNames();
+            _containerNames = lootContainernames.getNames();
 
             XmlDocument doc = new XmlDocument();
             doc.Load(T_XMLFile.Text);
@@ -287,6 +294,7 @@ namespace _7DtD_LootViewer
             emptyLG.count = 1;
             emptyLG.lgTotProb = 1;
             emptyLG.contents.Add(emptyLGContents);
+            
             _lootGroups.Add("empty", emptyLG);
 
             foreach (XmlElement lg in itemRefList)
@@ -590,7 +598,6 @@ namespace _7DtD_LootViewer
             M_Output.Clear();
             if(r_Item.Checked)
             {
-
                 //Looking for all containers containing a specific Item
                 foreach (KeyValuePair<int, lootContainer> lc in _lootContainer)
                 {
@@ -625,6 +632,9 @@ namespace _7DtD_LootViewer
                     //Check for MinMax
                     string tempCount = "Count: ";
                     if (item.minmax) { tempCount += item.minCount.ToString() + "-" + item.maxCount.ToString(); } else { tempCount += item.count.ToString(); }
+
+//                    strDisplay = lc.Key + ": " + string.Format("{0,20}", lc.Value.name) + " " + Math.Round(item.prob * 100, 4) + '%' + Environment.NewLine;
+
                     M_Output.AppendText("     " + item.item + ", " + Math.Round(item.prob * 100, 4) + "%  " + tempCount + Environment.NewLine);
                 }
                 //Update Count Textbox

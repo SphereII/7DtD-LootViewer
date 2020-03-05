@@ -93,7 +93,7 @@
             this.V_LContainer.FormattingEnabled = true;
             this.V_LContainer.Location = new System.Drawing.Point(99, 206);
             this.V_LContainer.Name = "V_LContainer";
-            this.V_LContainer.Size = new System.Drawing.Size(121, 21);
+            this.V_LContainer.Size = new System.Drawing.Size(290, 21);
             this.V_LContainer.TabIndex = 4;
             this.V_LContainer.SelectionChangeCommitted += new System.EventHandler(this.V_LContainer_SelectionChangeCommitted);
             // 
@@ -144,7 +144,7 @@
             // 
             // T_Count
             // 
-            this.T_Count.Location = new System.Drawing.Point(307, 206);
+            this.T_Count.Location = new System.Drawing.Point(456, 206);
             this.T_Count.Name = "T_Count";
             this.T_Count.Size = new System.Drawing.Size(100, 20);
             this.T_Count.TabIndex = 7;
@@ -152,7 +152,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(263, 209);
+            this.label2.Location = new System.Drawing.Point(412, 209);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 8;
