@@ -30,13 +30,13 @@ namespace _7DtD_LootViewer
                 tempNames.Add(2, "Player dropped backpacks");
                 tempNames.Add(3, "Player crafted cntGreenDrawerSecure");
                 tempNames.Add(4, "Dropped Bag on Destroy");
-                tempNames.Add(5, "Oven");
-                tempNames.Add(6, "Nightstand/Desk");
-                tempNames.Add(7, "Medicine Cabinets");
+                tempNames.Add(5, "StorageGeneric, paintable cube storage");
+                tempNames.Add(6, "WallSafe/deskSafe");
+                tempNames.Add(7, "Gun safe");
                 tempNames.Add(8, "Sink/lower Cupboards");
                 tempNames.Add(9, "Backpacks/Duffles");
                 tempNames.Add(10, "Garbage/TrashPile");
-                tempNames.Add(11, "Small Safes");
+                tempNames.Add(11, "Stove/oven");
                 tempNames.Add(12, "POI Storage Box");
                 tempNames.Add(13, "Laundry Basket");
                 tempNames.Add(14, "Mailbox");
@@ -67,7 +67,7 @@ namespace _7DtD_LootViewer
                 tempNames.Add(39, "Brew Master's Safe");
                 tempNames.Add(40, "Munitions Ammo Box");
                 tempNames.Add(41, "LootChest Hero");
-                tempNames.Add(42, "Gun Safe");
+                tempNames.Add(42, "NightstandClosed");
                 tempNames.Add(43, "Lockers");
                 tempNames.Add(44, "File Cabinet");
                 tempNames.Add(45, "Cooler");
@@ -109,10 +109,10 @@ namespace _7DtD_LootViewer
                 //  tempNames.Add(81, "Helicopter Storage");
                 //  tempNames.Add(82, "Jokeblimp Storage");
                 tempNames.Add(83, "Army Truck");
-                //  tempNames.Add(84, "Free");			
-                //  tempNames.Add(85, "Free");
-                //  tempNames.Add(86, "Free");			
-                //  tempNames.Add(87, "Free");						
+				tempNames.Add(84, "Metal clothes rack, pants");			
+                tempNames.Add(85, "metal clothes rack, shirts");
+                tempNames.Add(86, "Store shelves, food");			
+                tempNames.Add(87, "Food store crate");						
                 tempNames.Add(88, "Construction supplies shipping crate");
                 tempNames.Add(89, "Bookstore shipping crate");
                 tempNames.Add(90, "Car parts shipping crate");
@@ -125,9 +125,9 @@ namespace _7DtD_LootViewer
                 tempNames.Add(97, "Collapsed Batterybank");
                 tempNames.Add(98, "Collapsed Generatorbank");
                 tempNames.Add(99, "WaterCooler Full");
-                tempNames.Add(100, "WaterCooler Full");
-                tempNames.Add(101, "WeaponsBag Small");
-                tempNames.Add(102, "WeaponsBag Large");
+                tempNames.Add(100, "WeaponsBagSmall");
+                tempNames.Add(101, "WeaponsBagLarge");
+                tempNames.Add(102, "BuriedFoodStashChest");
                 tempNames.Add(103, "Loot block for testing prefabs");
                 tempNames.Add(104, "Weapon loot test template");
                 tempNames.Add(105, "Tool loot test template");
@@ -149,8 +149,27 @@ namespace _7DtD_LootViewer
                 tempNames.Add(121, "HardenedChest Secure");
                 tempNames.Add(122, "Buried WeaponChest");
                 tempNames.Add(123, "Closet Hanger/ Modular");
-                tempNames.Add(124, "ToolBoxs");
-            }
+                tempNames.Add(124, "RollingToolBoxClosed");
+				tempNames.Add(125, "ToolBoxClosed");
+                tempNames.Add(126, "Store shelves");
+                tempNames.Add(127, "Store shelves");
+                tempNames.Add(128, "FreezerGroceriesMiddleFullClosed");
+                tempNames.Add(129, "FreezerBeveragesMiddleFullClosed");
+                tempNames.Add(130, "ClothesShelfJeans01");
+                tempNames.Add(131, "Medicine cabinets");
+                tempNames.Add(132, "DisplayCaseAmmoLeftBroken");
+                tempNames.Add(133, "ShoesPileSneakers");
+                tempNames.Add(134, "ShoesPileSneakers");
+                tempNames.Add(135, "BookPile01");
+                tempNames.Add(136, "BookShelfSingleBottomFull01");
+                tempNames.Add(137, "GunRackWallArmor");
+                tempNames.Add(138, "GunRackWallGuns01");
+                tempNames.Add(139, "JunkDrone");
+                tempNames.Add(140, "StoreShelfElectronicsSingle");
+                tempNames.Add(141, "Clothes shelf, shirts");
+                tempNames.Add(142, "Metal clothes rack, pants");
+                tempNames.Add(143, "WineBarrel");
+			}
 
             return tempNames;
 

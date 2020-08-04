@@ -362,9 +362,16 @@ namespace _7DtD_LootViewer
                     }
 
                     //Try to parse Prob to a Decimal, if it fails assume it is a 1 by leaving it default.
-                    decimal decValue;
-                    if (probTmpl != "")
+                    if (!_LootProbTmpl.ContainsKey(probTmpl) && probTmpl != "" )
                     {
+                      //  MessageBox.Show("Missing Probability: " + probTmpl);
+                    }
+                        decimal decValue;
+                    if (probTmpl != "" && _LootProbTmpl.ContainsKey( probTmpl))
+                    {
+
+                        
+
                         //This is a Probability Template, not a Straight Probability, find the matching Probability Template and pull the Probability form there
                         foreach (KeyValuePair<int, Decimal> kv in _LootProbTmpl[probTmpl])
                         {
@@ -567,6 +574,8 @@ namespace _7DtD_LootViewer
                 List <lootGroupContents> SortedList = lc.Value.contents.OrderBy(o => o.item).ToList();
                 foreach (lootGroupContents item in SortedList)
                 {
+                    if (containerTotProb == 0)
+                        containerTotProb = 1;
                     item.prob = item.tempProbMod / containerTotProb;
                     item.tempProbMod = 0;
                     //M_Output.AppendText("     " + item.item + ", " + Math.Round(item.tempProbMod,3) + ", " + Math.Round(item.tempProbMod/containerTotProb, 3) + Environment.NewLine);
